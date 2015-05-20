@@ -1,0 +1,34 @@
+name = sensibilities
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = build/css/sensibilities.normalize.css
+stylesheets[all][] = build/css/sensibilities.hacks.css
+stylesheets[all][] = build/css/sensibilities.styles.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = build/js/functions.js
+
+; ========================================
+; Regions
+; ========================================
+regions[header_left] = Header Left
+regions[header_right] = Header Right
+regions[content_top] = Content Top
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[content_btm] = Content Bottom
+regions[footer_top_left] = Footer Top Left
+regions[footer_top_right] = Footer Top Right
+regions[footer_btm] = Footer Bottom

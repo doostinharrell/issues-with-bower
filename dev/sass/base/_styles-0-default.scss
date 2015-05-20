@@ -1,0 +1,116 @@
+// Zen Grid Defaults
+
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: true;
+$legacy-support-for-ie8: true;
+$box-sizing-polyfill-path: "../../images/boxsizing.htc";
+$zen-column-count: 1;
+$zen-grid-width: 100%;
+$zen-gutter-width: 1em;
+
+// Default Styles
+
+html { 
+  height: 100%; 
+  width: 100%;
+  background: $cream url(../../images/background.jpg);;
+}
+
+a, a:link, a:visited {
+  @include transition(all .25s ease-in-out);
+  text-decoration: none;
+  color: $green;
+  &:hover {
+    color: $green-hover;
+  }
+}
+
+a.twm-button, a.twm-button:link, a.twm-button:visited {
+  @include transition(all .25s ease-in-out);
+  @include font-size($l);
+  @include border-radius(5em);
+  text-align: center;
+  font-family: $font-heading;
+  background: $green;
+  display: inline-block;
+  padding: .5em 1em;
+  color: $white;
+  &:hover {
+    background: $green-hover;
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+.l-header {
+  text-align: center;
+  .l-region {
+    @include v-align();
+  }
+}
+
+.l-region--content-top {
+  margin-bottom: 1em;
+}
+
+.l-content {
+  overflow: hidden;
+}
+
+.l-footer {
+  text-align: center;
+  background: rgba($black, .07);
+  color: $brown-hover;
+  .l-region {
+    @include v-align();
+  }
+}
+
+.l-region--footer-btm {
+  @include zen-clear();
+  padding-top: 1em;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  a, a:link, a:visited {
+    color: $brown-hover;
+    &:hover {
+      color: $brown-hover;
+    }
+  }
+}
+
+// Front Page Styles
+
+.front .l-content {
+  background: $brown;
+  padding: 2em 5em;
+  text-align: center;
+  color: $cream-dark;
+  h1 {
+    position: relative;
+    display: inline-block;
+    color: $white;
+    &:before, &:after {
+      content: '';
+      height: 1em;
+      width: 100px;
+      top: -.125em;
+      position: absolute;
+    }
+    &:before {
+      background: url(../../images/leaf-left.png) no-repeat center center;
+      left: -100px;
+    }
+    &:after {
+      background: url(../../images/leaf-right.png) no-repeat center center;
+      right: -100px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}

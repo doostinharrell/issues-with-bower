@@ -1,0 +1,174 @@
+.view-featured-content {
+  margin: auto;
+  margin-bottom: -1em;
+  padding: 1em 0 0 0;
+  .views-row {
+    margin-bottom: 1em;
+    background: $white;
+    .fc {
+      position: relative;
+      overflow: hidden;
+    }
+    .fc-content-inner, .fc-content-hover-inner {
+      padding: 2em;
+    }
+    .fc-title {
+      text-align: center;
+      h2 {
+        @include font-size($xxl);
+        color: $white;
+        margin: 0;
+      }
+    }
+    .fc-message {
+      @include font-size(1.4);
+      padding-bottom: 1em;
+    }
+  }
+}
+
+@include breakpoint($mobile) {
+  .view-featured-content {
+    .views-row {
+      .fc-content {
+        background: $orange;
+      }
+      .fc-image {
+        display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint($tablet) {
+  .view-featured-content {
+    .views-row {
+      width: 100%;
+      .fc-content, .fc-content-hover {
+        position: relative;
+        z-index: 1;
+        float: left;
+        width: 50%;
+      }
+      .fc-image {
+        width: 50%;
+        background: $green;
+        position: absolute;
+        z-index: 0;
+        img {
+          width: 100%;
+          opacity: .2;
+          height: auto;
+        }
+        &.green {
+          background: $green;
+        }
+        &.green-dark {
+          background: $green-dark;
+        }
+        &.brown {
+          background: $brown;
+        }
+        &.brown-light {
+          background: $brown-light;
+        }
+        &.orange {
+          background: $orange;
+        }
+        &.red {
+          background: $red;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($normal) {
+  
+  // Set column width based on breakpoint width
+  $col-width: ($normal - 2em) / 3;
+    
+  .view-featured-content {
+    .views-row {
+      width: $col-width;
+      float: left;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      .fc {
+        height: 310px;
+        background: $orange;
+        &:hover {
+          .fc-content-hover {
+            @include translate(0, 0);
+          }
+        }
+        &:hover {
+          .fc-content {
+            @include translate(-3em, 0);
+            opacity: 0;
+          }
+        }
+        
+        &:hover {
+          .fc-image img {
+            @include translate(-2em, 0);
+          }
+        }
+      }
+      .fc-content {
+        @include transition(all .5s ease-in-out);
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          margin-right: -0.25em;
+        }
+      }
+      .fc-content-inner {
+        display: inline-block;
+        vertical-align: middle;
+        width: 99.9%;
+        padding: 0;
+      }
+      .fc-content-hover {
+        @include translate(100%, 0);
+        @include transition(all .5s ease-in-out);
+        background: $white;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+      }
+      .fc-image {
+        width: 100%;
+        img {
+          @include transition(all .5s ease-in-out);
+          @include translate(0, 0);
+        }
+      }
+      &.views-row-3, &.views-row-6 {
+        margin-right: 0em;
+      }
+    }
+  }
+}
+
+@include breakpoint($wide) {
+  
+  // Set column width based on breakpoint width
+  $col-width: ($wide - 2em) / 3;
+    
+  .view-featured-content {
+    .views-row {
+      width: $col-width;
+      .fc {
+        height: 230px;
+      }
+    }
+  }
+}

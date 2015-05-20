@@ -1,0 +1,127 @@
+// Primary Navigation
+
+.l-header {
+  nav {
+    width: 100%;
+  }
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+      list-style: none;
+      display: inline-block;
+      width: 33.333%;
+      margin-left: -4px;
+      a {
+        font-family: $font-heading;
+        color: $brown-hover;
+      }
+      i {
+        @include transition(all .25s ease-in-out);
+        @include border-radius(5em);
+        @include font-size(1.5);
+        color: $cream;
+        background: $brown-hover;
+        padding: .5em;
+        height: 1em;
+        width: 1em;
+        line-height: 1em;
+      }
+      .title {
+        padding-top: 1em;
+      }
+      &.home i {
+        background: url(../../images/home.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+      &.about i {
+        background: url(../../images/about.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+      &.spa-services i {
+        background: url(../../images/spa-services.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+      &.gift-cards i {
+        background: url(../../images/gift-cards.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+      &.locations i {
+        background: url(../../images/locations.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+      &.blog i {
+        background: url(../../images/blog.png) no-repeat center center;
+        background-size: contain;
+        color: transparent;
+      }
+    }
+  }
+}
+
+
+// Footer Navigation
+
+.l-footer {
+  nav {
+    width: 100%;
+  }
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+      list-style: none;
+      display: inline-block;
+      text-align: center;
+      width: 33.333%;
+      margin-left: -4px;
+      a {
+        overflow: hidden;
+        display: inline-block;
+      }
+      i {
+        @include transition(all .25s ease-in-out);
+        @include border-radius(5em);
+        @include font-size(1.5);
+        color: $cream;
+        background: $brown-hover;
+        padding: .5em;
+        height: 1em;
+        width: 1em;
+        line-height: 1em;
+      }
+      &:hover {
+        i.fa-facebook {
+          background: $facebook;
+        }
+        i.fa-twitter {
+          background: $twitter;
+        }
+        i.fa-pinterest {
+          background: $pinterest;
+        }
+        i.fa-instagram {
+          background: $instagram;
+        }
+      }
+    }
+  }
+  .l-region--footer-top-left ul.menu {
+    text-align: right;
+  }
+  .l-region--footer-top-right ul.menu{
+    text-align: left;
+  }
+}
+
+
+// Admin Tabs
